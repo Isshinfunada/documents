@@ -110,12 +110,33 @@ h3 {
 }
 
 p,
-ul {
+ul,
+ol {
   margin: 0 0 16px;
 }
 
-ul {
+ul,
+ol {
   padding-left: 1.3em;
+}
+
+table {
+  width: 100%;
+  margin: 0 0 20px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f1f4f9;
+  font-weight: 700;
 }
 
 a {
