@@ -182,9 +182,13 @@ footer {
 
   .mobile-nav {
     display: block;
+    position: relative;
+    z-index: 10;
   }
 
   .mobile-nav summary {
+    position: relative;
+    z-index: 12;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -203,12 +207,43 @@ footer {
     display: none;
   }
 
+  .mobile-nav[open]::before {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(17, 24, 39, 0.46);
+    content: "";
+  }
+
+  .mobile-nav[open] summary {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 12;
+  }
+
   .mobile-nav-list {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
     display: grid;
+    align-content: start;
+    width: min(82vw, 320px);
     gap: 8px;
-    margin: 10px 0 0;
-    padding: 0;
+    margin: 0;
+    padding: 72px 18px 18px;
+    border-right: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 16px 0 40px rgba(17, 24, 39, 0.18);
     list-style: none;
+    transform: translateX(-105%);
+    transition: transform 180ms ease;
+  }
+
+  .mobile-nav[open] .mobile-nav-list {
+    transform: translateX(0);
   }
 
   .mobile-nav a,
