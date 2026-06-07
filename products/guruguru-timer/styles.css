@@ -163,13 +163,13 @@ footer {
 
 @media (max-width: 760px) {
   main {
-    width: min(100% - 24px, 640px);
-    padding: 20px 0 40px;
+    width: min(100% - 18px, 640px);
+    padding: 18px 0 40px;
   }
 
   .page-shell {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .side-nav {
@@ -177,14 +177,40 @@ footer {
     padding: 0;
   }
 
+  .side-nav-title {
+    margin-bottom: 10px;
+  }
+
   .side-nav-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    gap: 8px;
+    margin: 0 -9px;
+    padding: 0 9px 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .side-nav a,
   .side-nav .active {
+    flex: 0 0 auto;
     border: 1px solid var(--border);
     background: var(--surface);
+    padding: 8px 12px;
     text-align: center;
+    white-space: nowrap;
+  }
+
+  article {
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
